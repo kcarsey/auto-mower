@@ -31,7 +31,7 @@ layout = [
 ]
 
 # Create the window
-window = sg.Window('Window Title', layout, no_titlebar=True, location=(0,0), size=(800, 480), finalize=True)
+window = sg.Window('Window Title', layout, no_titlebar=True, location=(0,0), size=(1024, 600), finalize=True)
 window.maximize()
 
 # Set the update interval for the clock (in seconds)

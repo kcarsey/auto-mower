@@ -19,7 +19,7 @@ tab_group = sg.TabGroup([
     [sg.Tab('Tab 1', tab1_layout)],
     [sg.Tab('Tab 2', tab2_layout)],
     [sg.Tab('Tab 3', tab3_layout)],
-], size=(800, 480), tab_location='bottomleft')
+], size=(1024, 600), tab_location='bottomleft')
 
 # Create the window layout
 tab_layout = [
