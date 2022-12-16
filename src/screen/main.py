@@ -13,7 +13,7 @@ layout3 = [[sg.Text('This is layout 3 - It is all Radio Buttons')],
 
 # ----------- Create actual layout using Columns and a row of Buttons
 layout = [[sg.Column(layout1, key='-COL1-'), sg.Column(layout2, visible=False, key='-COL2-'), sg.Column(layout3, visible=False, key='-COL3-')],
-          [sg.Button('Cycle Layout'), sg.Button('1'), sg.Button('2'), sg.Button('3'), sg.Button('Exit')]]
+          [sg.Button('1'), sg.Button('2'), sg.Button('3'), sg.Button('Exit')]]
 
 window = sg.Window('Swapping the contents of a window', layout, no_titlebar=True, location=(0,0), size=(800,480), finalize=True) #keep_on_top=True to keep on top
 window.maximize()
@@ -34,3 +34,4 @@ while True:
         layout = int(event)
         window[f'-COL{layout}-'].update(visible=True)
 window.close()
+
