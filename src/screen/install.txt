@@ -1,0 +1,7 @@
+requirements:
+
+npm
+npm install jquery
+bootstrap-3.3.7
+
+be sure to set script source in index.html and anywhere else.
