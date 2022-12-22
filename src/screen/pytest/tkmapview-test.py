@@ -12,7 +12,7 @@ class App(tkinter.Tk):
 
     def __init__(self, *args, **kwargs):
         tkinter.Tk.__init__(self, *args, **kwargs)
-
+        
         self.title(self.APP_NAME)
         self.geometry(f"{self.WIDTH}x{self.HEIGHT}")
 
@@ -61,7 +61,9 @@ class App(tkinter.Tk):
                                                     command=self.connect_marker)
         self.connect_marker_button.grid(row=2, column=0, pady=10, padx=10)
 
-        self.map_widget.set_address("NYC")
+        self.map_widget.set_address("Rutland, OH, USA")
+        
+        self.map_widget.set_tile_server("https://mt0.google.com/vt/lyrs=s&hl=en&x={x}&y={y}&z={z}&s=Ga", max_zoom=22)  # google satellite
 
         self.marker_list = []
         self.marker_path = None
