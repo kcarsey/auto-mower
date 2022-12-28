@@ -1,0 +1,15 @@
+---
+- name: Setup PI packages and services.
+  hosts: all
+  vars:
+  tasks:
+    - name: setup systemd service for automower-gui
+      copy:
+        src: systemd/mower-gui.service
+        dest: /etc/systemd/system/mower-gui.service
+        mode: 0644
+
+    - name: enable sytemd service.
+      systemd:
+        name: mower-gui.service
+        enabled: yes
