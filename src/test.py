@@ -46,9 +46,9 @@ polygon_1 = map_widget.set_polygon([(46.0732306, 6.0095215),
                                     (46.1417827, 6.8664551),
                                     (46.4151388, 6.7236328),
                                     (46.3772542, 6.4160156)],
-                                   # fill_color=None,
-                                   # outline_color="red",
-                                   # border_width=12,
+                                   fill_color=None,
+                                   outline_color="red",
+                                   border_width=2,
                                    command=polygon_click,
                                    name="switzerland_polygon")
 
