@@ -7,8 +7,8 @@ from tkintermapview import TkinterMapView
 class App(tkinter.Tk):
 
     APP_NAME = "map_view_demo.py"
-    WIDTH = 800
-    HEIGHT = 750
+    WIDTH = 1024
+    HEIGHT = 800
 
     def __init__(self, *args, **kwargs):
         tkinter.Tk.__init__(self, *args, **kwargs)
