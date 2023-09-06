@@ -62,7 +62,7 @@ class App(tkinter.Tk):
                                                     command=self.connect_marker)
         self.connect_marker_button.grid(row=2, column=0, pady=10, padx=10)
 
-        self.map_widget.set_address("NYC")
+        self.map_widget.set_address("Rutland, OH")
 
         self.marker_list = []
         self.marker_path = None
