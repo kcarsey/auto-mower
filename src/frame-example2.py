@@ -13,6 +13,7 @@ class SampleApp(tkinter.Tk):
 
         self.title_font = tkfont.Font(family='Helvetica', size=18, weight="bold", slant="italic")
         self.geometry("1024x600")
+        self.overrideredirect(True)
 
         # the container is where we'll stack a bunch of frames
         # on top of each other, then the one we want visible
@@ -22,7 +23,6 @@ class SampleApp(tkinter.Tk):
         container.grid_rowconfigure(0, weight=1)
         container.grid_columnconfigure(0, weight=1)
         
-
         self.frames = {}
         for F in (StartPage, PageOne, PageTwo, MapView):
             page_name = F.__name__
@@ -90,9 +90,19 @@ class MapView(tkinter.Frame):
         tkinter.Frame.__init__(self, parent)
         self.controller = controller
         
-        button = tkinter.Button(self, text="Go to the start page",
+        button1 = tkinter.Button(self, text="Go to the start page",
                            command=lambda: controller.show_frame("StartPage"))
-        button.pack()
+        
+        button2 = tkinter.Button(self, text="Map View", 
+                            command=lambda: map_widget.set_tile_server("https://mt0.google.com/vt/lyrs=m&hl=en&x={x}&y={y}&z={z}&s=Ga", max_zoom=22))
+        
+        button3 = tkinter.Button(self, justify="left", text="Satellite View", 
+                            command=lambda: map_widget.set_tile_server("https://mt0.google.com/vt/lyrs=s&hl=en&x={x}&y={y}&z={z}&s=Ga", max_zoom=22))
+        
+
+        button1.pack()
+        button2.pack()
+        button3.pack()
         
         map_widget = tkintermapview.TkinterMapView(self)
         map_widget.pack(fill="both", expand=True)
@@ -109,24 +119,20 @@ class MapView(tkinter.Frame):
             print(f"marker clicked - text: {marker.text}  position: {marker.position}")
 
         # set a position marker (also with a custom color and command on click)
-        marker_2 = map_widget.set_marker(52.516268, 13.377695, text="Brandenburger Tor", command=marker_click)
-        marker_3 = map_widget.set_marker(52.55, 13.4, text="52.55, 13.4")
+        # marker_2 = map_widget.set_marker(52.516268, 13.377695, text="Brandenburger Tor", command=marker_click)
+        # marker_3 = map_widget.set_marker(52.55, 13.4, text="52.55, 13.4")
         # marker_3.set_position(...)
         # marker_3.set_text(...)
         # marker_3.delete()
 
         # set a path
-        path_1 = map_widget.set_path([marker_2.position, marker_3.position, (52.568, 13.4), (52.569, 13.35)])
+        # path_1 = map_widget.set_path([marker_2.position, marker_3.position, (52.568, 13.4), (52.569, 13.35)])
         # path_1.add_position(...)
         # path_1.remove_position(...)
         # path_1.delete()
 
 
 
-
-
-
-       
 
 if __name__ == "__main__":
     app = SampleApp()
