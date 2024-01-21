@@ -3,6 +3,8 @@ __pycache__/
 *.py[cod]
 *$py.class
 .automower-screen
+.venv*
+.venv-*
 
 # C extensions
 *.so
