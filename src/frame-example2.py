@@ -14,6 +14,7 @@ class SampleApp(tkinter.Tk):
         self.title_font = tkfont.Font(family='Helvetica', size=18, weight="bold", slant="italic")
         self.geometry("1024x600")
         self.overrideredirect(True)
+        
 
         # the container is where we'll stack a bunch of frames
         # on top of each other, then the one we want visible
@@ -56,6 +57,7 @@ class StartPage(tkinter.Frame):
                             command=lambda: controller.show_frame("PageTwo"))
         button3 = tkinter.Button(self, text="Go to Map",
                             command=lambda: controller.show_frame("MapView"))
+       
         button1.pack()
         button2.pack()
         button3.pack()
@@ -70,7 +72,8 @@ class PageOne(tkinter.Frame):
         label.pack(side="top", fill="x", pady=10)
         button = tkinter.Button(self, text="Go to the start page",
                            command=lambda: controller.show_frame("StartPage"))
-        button.pack()
+        button.place(x=5, y=5)
+        # button.pack()
 
 
 class PageTwo(tkinter.Frame):
@@ -92,6 +95,7 @@ class MapView(tkinter.Frame):
         
         button1 = tkinter.Button(self, text="Go to the start page",
                            command=lambda: controller.show_frame("StartPage"))
+        button1.place(x=25, y=100)
         
         button2 = tkinter.Button(self, text="Map View", 
                             command=lambda: map_widget.set_tile_server("https://mt0.google.com/vt/lyrs=m&hl=en&x={x}&y={y}&z={z}&s=Ga", max_zoom=22))
@@ -100,7 +104,7 @@ class MapView(tkinter.Frame):
                             command=lambda: map_widget.set_tile_server("https://mt0.google.com/vt/lyrs=s&hl=en&x={x}&y={y}&z={z}&s=Ga", max_zoom=22))
         
 
-        button1.pack()
+        button1.place(x=5, y=5)
         button2.pack()
         button3.pack()
         
