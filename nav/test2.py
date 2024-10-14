@@ -64,8 +64,8 @@ def sample_path(start_lon, end_lon, lat, direction, base_point_distance, polygon
         
         path_points.append((lat, current_lon, interpolated_alt))
         current_lon += step
-    return path_points
 
+    return path_points
 
 # Interpolate altitude between points for a given lat/lon (basic linear interpolation for now)
 def interpolate_altitude(lat, lon, polygon):
